@@ -7,11 +7,13 @@
 @import "libs/font.scss";
 
 //---- COLOR -----//
-$color1: #2f363e;
-$color2: rgba(255, 255, 255, 0.2);
+$color1: #131313;
+$color2: rgba(255, 255, 255, 0.25);
 $color3: #fff;
-$color4: #bcbcc0;
-$color5:#95999D;
+$color4: #222;
+$color5:#6DFF73;
+$color6:#DB0AFF;
+$color7: #03A9F4;
 
 body {
     display: flex;
@@ -19,5 +21,55 @@ body {
     align-items: center;
     min-height: 100vh;
     background: $color1;
-    //font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    
+}
+
+.layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 250vh;
+    background: $color3;
+    box-shadow: inset -10px 0 40px $B00001,
+    inset 10px 0 40px $B00001,
+    inset -10px 0 10px $color2,
+    inset 10px 0 10px $B00001,
+    0 0 50px $B00010;
+    &.layer1 {
+        background:$color4 radial-gradient(($color5 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background-size: 35px 35px;
+        transform: translate(-50%,-50%) rotate(45deg);
+        z-index: 1;
+    }
+    &.layer2 {
+        background:$color4 radial-gradient(($color6 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background-size: 35px 35px;
+        transform: translate(-50%,-35%) rotate(45deg);
+        z-index: 2;
+    }
+    &.layer3 {
+        background:$color4 radial-gradient(($color7 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background-size: 35px 35px;
+        transform: translate(-50%,-65%) rotate(45deg);
+        z-index: 11;
+    }
+    &.layer4 {
+        background:$color4 radial-gradient(($color5 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background-size: 35px 35px;
+        transform: translate(-50%,-50%) rotate(-45deg);
+        z-index: 12;
+    }
+    &.layer5 {
+        background:$color4 radial-gradient(($color6 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background-size: 35px 35px;
+        transform: translate(-50%,-35%) rotate(-45deg);
+    }
+    &.layer6{
+        background:$color4 radial-gradient(($color7 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background-size: 35px 35px;
+        transform: translate(-50%,-65%) rotate(-45deg);
+        z-index: 10;
+    }
 }
