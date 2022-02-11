@@ -1,10 +1,6 @@
 // import
 @import "libs/color.scss";
-@import "libs/responsive.scss";
 @import "libs/reset.scss";
-@import "libs/mixins.scss";
-@import "libs/function.scss";
-@import "libs/font.scss";
 
 //---- COLOR -----//
 $color1: #131313;
@@ -14,6 +10,8 @@ $color4: #222;
 $color5:#6DFF73;
 $color6:#DB0AFF;
 $color7: #03A9F4;
+$color8:#E91E63;
+$color9:#FFC107;
 
 body {
     display: flex;
@@ -33,7 +31,7 @@ body {
     height: 250vh;
     background: $color3;
     box-shadow: inset -10px 0 40px $B00001,
-    inset 10px 0 40px $B00001,
+    inset 10px 0 40px $B00010,
     inset -10px 0 10px $color2,
     inset 10px 0 10px $B00001,
     0 0 50px $B00010;
@@ -42,34 +40,56 @@ body {
         background-size: 35px 35px;
         transform: translate(-50%,-50%) rotate(45deg);
         z-index: 1;
+        animation: animate 2s linear infinite;
     }
     &.layer2 {
         background:$color4 radial-gradient(($color6 9px,$github 9px,$github 13px, transparent 13px)) ;
         background-size: 35px 35px;
         transform: translate(-50%,-35%) rotate(45deg);
         z-index: 2;
+        animation: animate_two 2s linear infinite;
     }
     &.layer3 {
         background:$color4 radial-gradient(($color7 9px,$github 9px,$github 13px, transparent 13px)) ;
         background-size: 35px 35px;
         transform: translate(-50%,-65%) rotate(45deg);
         z-index: 11;
+        animation: animate 2s linear infinite;
     }
     &.layer4 {
-        background:$color4 radial-gradient(($color5 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background:$color4 radial-gradient(($color9 9px,$github 9px,$github 13px, transparent 13px)) ;
         background-size: 35px 35px;
         transform: translate(-50%,-50%) rotate(-45deg);
         z-index: 12;
+        animation: animate_two 2s linear infinite;
     }
     &.layer5 {
-        background:$color4 radial-gradient(($color6 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background:$color4 radial-gradient(($color8 9px,$github 9px,$github 13px, transparent 13px)) ;
         background-size: 35px 35px;
         transform: translate(-50%,-35%) rotate(-45deg);
+        animation: animate 2s linear infinite;
     }
     &.layer6{
-        background:$color4 radial-gradient(($color7 9px,$github 9px,$github 13px, transparent 13px)) ;
+        background:$color4 radial-gradient(($snapchat 9px,$github 9px,$github 13px, transparent 13px)) ;
         background-size: 35px 35px;
         transform: translate(-50%,-65%) rotate(-45deg);
         z-index: 10;
+        animation: animate_two 2s linear infinite;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position:  35px -35px;
+    } 100% {
+        background-position:0 0;
+    }
+}
+
+@keyframes animate_two {
+    0% {
+        background-position: 0 0;
+    } 100% {
+        background-position: 35px -35px;
     }
 }
